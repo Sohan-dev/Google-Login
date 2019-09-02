@@ -3,6 +3,8 @@ package com.example.googlelogin;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -134,5 +136,15 @@ public class MainActivity extends AppCompatActivity {
                         // ...
                     }
                 });
+    }
+
+    public void login(View view) {
+        //Toast.makeText(this, "Thank You", Toast.LENGTH_LONG).show();
+
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        //transaction.add(R.id.myframe,YOUR_FRAGMENT_NAME,YOUR_FRAGMENT_STRING_TAG);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
