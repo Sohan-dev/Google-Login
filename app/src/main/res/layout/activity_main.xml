@@ -7,12 +7,7 @@
     android:background="#14363391"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/myframe"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </FrameLayout>
 
 <RelativeLayout
     android:layout_width="match_parent"
@@ -20,7 +15,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="250"
+        android:layout_height="250dp"
         android:layout_centerInParent="true">
 
         <EditText
@@ -57,27 +52,70 @@
 
     </RelativeLayout>
 
-
-
-   <ImageView
-       android:id="@+id/google"
-       android:layout_width="40dp"
-       android:layout_height="40dp"
-       android:src="@drawable/google"
-       android:layout_centerHorizontal="true"
-       android:layout_above="@+id/text"/>
-
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
-        android:layout_centerHorizontal="true"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
+        android:weightSum="2">
 
-        android:textColor="#000"
-        android:textSize="16sp"
-        android:text="Google Login"/>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+
+            <ImageView
+                android:id="@+id/google"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/google"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/google"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:text="Google"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/facebook"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/facebook"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/facebook"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:text="Facebook"/>
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>
 

@@ -9,9 +9,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -29,10 +31,11 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView googleSingIn;
+    ImageView googleSingIn,facebook;
     FirebaseAuth mAuth;
     private final  static  int RC_SIGN_IN = 100;
     GoogleApiClient mGoogleApiClint;
+    private CallbackManager callbackManager;
     FirebaseAuth.AuthStateListener authStateListener;
 
     @Override
@@ -49,7 +52,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         googleSingIn = findViewById(R.id.google);
+        facebook = findViewById(R.id.facebook);
+
         mAuth = FirebaseAuth.getInstance();
+
+        callbackManager = CallbackManager.Factory.create();
 
         googleSingIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,6 +90,9 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
                 .build();
+
+
+
     }
 
 
